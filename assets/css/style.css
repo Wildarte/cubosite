@@ -1,0 +1,47 @@
+:root{
+    --color-main: #5839fb;
+    --color-pink: #e64cff;
+    --color-green: #7ED957;
+
+    --color-gray: #F3EEFD;
+    --color-gray2: #F7F6FF;
+    --color-light-blue: #E2EEFF;
+    --color-light-blue2: #EDFBFF;
+
+    --color-dark: #2D2A40;
+    --color-white: #ffffff;
+    --color-black: #000000;
+}
+
+.container{
+    max-width: 1260px;
+    margin: auto;
+}
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.f-33{
+    flex-basis: 33%;
+}
+.f-25{
+    flex-basis: 25%;
+}
+.f-75{
+    flex-basis: 75%;
+}
+.f-30{
+    flex-basis: 30%;
+}
+.f-70{
+    flex-basis: 70%;
+}
+.f-100{
+    flex-basis: 100%;
+}
+.f-40{
+    flex-basis: 40%;
+}
+.f-60{
+    flex-basis: 60%;
+}
