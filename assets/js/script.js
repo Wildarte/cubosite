@@ -3,7 +3,8 @@ $(document).ready(function(){
     $('.carroussel_plat').owlCarousel({
       loop:true,
       margin:20,
-      nav:true,
+      nav:false,
+      dots: false,
       responsive:{
           0:{
               items:1
@@ -85,5 +86,22 @@ $(document).ready(function(){
     });
 
   }
+
+
+  const close_menu_mobile = document.getElementById('close_menu_mobile');
+  const open_menu_mobile = document.getElementById('open_menu_mobile');
+  const nav_menu = document.querySelector('nav.menu');
+  
+  close_menu_mobile.addEventListener('click', () => {
+
+    nav_menu.classList.remove('open_menu_mobile');
+
+  });
+
+  open_menu_mobile.addEventListener('click', () => {
+
+    nav_menu.classList.add('open_menu_mobile');
+
+  });
 
 })
