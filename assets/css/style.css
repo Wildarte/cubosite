@@ -64,6 +64,7 @@
     font-size: 18px;
     font-weight: 400;
     color: var(--color-gray3);
+    margin-bottom: 10px;
 }
 .m-b-20{
     margin-bottom: 20px;
@@ -191,6 +192,9 @@ nav.menu ul li a.active{
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    font-size: 80px;
+    margin-bottom: 20px;
+    line-height: 1em;
 }
 .w-70{
     width: 70%!important;
@@ -201,6 +205,12 @@ nav.menu ul li a.active{
 .title-default{
     font-size: 40px;
     font-weight: 400;
+}
+.title-simple{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-dark);
+    margin-bottom: 20px;
 }
 
 .img_float_page{
@@ -475,7 +485,7 @@ nav.menu ul li a.active{
 .form_contact .row_form{
     width: 100%;
     display: flex;
-    padding: 5px 0;
+    padding: 5px;
 }
 .form_contact .row_form input{
     width: 100%;
@@ -525,6 +535,60 @@ nav.menu ul li a.active{
 .head_menu{
     display: none;
 }
+
+
+
+
+
+
+
+
+/* ======= style page sobre ====== */
+.sec_form_sobre{
+    background-image: url(../img/net.png);
+    background-position-y: -290px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.sec_form_sobre::before{
+    content: "";
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to bottom, rgba(234, 232, 255, 07), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.content_form_sobre{
+    position: relative;
+}
+.content_form_sobre .form_contact h3{
+    width: 100%;
+    text-align: center;
+}
+.content_form_sobre .form_contact{
+    margin: auto;
+    margin-top: 0;
+    box-shadow: 0 -20px 40px rgba(10,10,10, .1);
+}
+.content_form_sobre .form_contact .w-50{
+    width: 50%;
+}
+.sec_form_sobre .title-simple{
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sec_form_sobre .social_contact{
+    justify-content: center;
+}
+.first_section .f-50{
+    padding: 10px;
+}
+/* ======= style page sobre ====== */
+
 
 
 @media(max-width: 980px){
@@ -681,6 +745,18 @@ nav.menu ul li a.active{
         left: -10px;
         z-index: -1;
     }
+    .title_sobre{
+        font-size: 50px;
+    }
+    .sec_form_sobre .title-simple{
+        width: 100%;
+    }
+    .content_form_sobre .form_contact{
+        width: calc(100% - 20px);
+    }
+    .first_section .f-50{
+        padding: 0 10px;
+    }
 }
 
 @media(max-width: 500px){
@@ -708,7 +784,7 @@ nav.menu ul li a.active{
         padding: 60px 10px;
     }
     .content-default, .content-default-faq{
-        padding: 40px 10px;
+        padding: 30px 10px;
     }
     .head_section{
         margin-bottom: 30px;
@@ -760,5 +836,17 @@ nav.menu ul li a.active{
     }
     .button_menu .rec{
         height: 3px;
+    }
+    .title_sobre{
+        font-size: 42px;
+    }
+    .text-default{
+        font-size: 16px;
+    }
+    .title-simple{
+        font-size: 20px;
+    }
+    .content_form_sobre .form_contact .w-50{
+        width: 100%;
     }
 }
