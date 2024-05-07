@@ -7,6 +7,7 @@
     --color-gray2: #F7F6FF;
     --color-gray3: #4E5774;
     --color-gray4: #B9BCD9;
+    --color-gray5: #EEF0FF;
 
     --color-light-blue: #E2EEFF;
     --color-light-blue2: #EDFBFF;
@@ -136,6 +137,9 @@
     width: 12px;
     margin-left: 8px;
 }
+.m-auto{
+    margin: auto;
+}
 
 .link-simple{
     background-color: transparent;
@@ -246,7 +250,7 @@ nav.menu ul li a.active{
 .left_hero h2{
     font-size: 80px;
     margin-bottom: 20px;
-    line-height: 1em;
+    line-height: 1.1em;
 }
 .left_hero p{
     margin-bottom: 40px;
@@ -293,6 +297,7 @@ nav.menu ul li a.active{
     list-style-image: url(../img/icon_check.png);
     position: relative;
     z-index: 1;
+    margin-left: 24px;
 }
 .card_work ul li{
     font-size: 16px;
@@ -535,7 +540,16 @@ nav.menu ul li a.active{
 .head_menu{
     display: none;
 }
+#bar_flashing {
+    animation: blink 1s linear infinite;
+    color: var(--color-pink)
+}
 
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
 
 
 
@@ -588,6 +602,102 @@ nav.menu ul li a.active{
     padding: 10px;
 }
 /* ======= style page sobre ====== */
+
+
+
+
+/* ================= style page modelos 3D ===================== */
+.div_degrade{
+    background-image: linear-gradient(to bottom, var(--color-gray5), transparent);
+    border-radius: 20px;
+    height: 500px;
+}
+.deg_30{
+    width: calc(30% - 20px);
+    margin: 10px;
+}
+.deg_70{
+    width: calc(70% - 20px);
+    margin: 10px;
+}
+.head_section_modelos{
+    margin-bottom: 20px;
+}
+.deg_33{
+    width: calc(33.33% - 20px);
+    margin: 10px;
+}
+.deg_100{
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+.content_flag{
+    padding: 60px 10px;
+}
+.list_default{
+    list-style-image: url(../img/icon_check.png);
+    margin-left: 24px;
+}
+.list_default li{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2em;
+    color: var(--color-gray3);
+    margin-bottom: 8px;
+}
+.content_min{
+    padding: 60px 0;
+}
+.content_flag2{
+    padding: 60px 10px 160px;
+}
+.content_min img{
+    margin: auto;
+}
+.imgs_card{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.imgs_card img{
+    width: 25%;
+    margin-bottom: 0;
+}
+.div_degrade_mini{
+    background-image: linear-gradient(to bottom, var(--color-gray5), transparent);
+    height: 300px;
+    border-radius: 0;
+}
+/* ================= style page modelos 3D ===================== */
+
+
+
+
+
+/* ================ style page portfolio ======================= */
+.content_swicth{
+    padding: 20px 10px;
+    margin-bottom: 40px;
+}
+.list_switch{
+    margin: auto;
+    display: flex;
+}
+.list_switch li a{
+    padding: 2px 20px;
+    color: var(--color-dark);
+}
+.list_switch li a.active{
+    color: var(--color-main);
+}
+.simple_section{
+    padding: 60px 10px 40px;
+}
+
+/* ================ style page portfolio ======================= */
+
+
 
 
 
@@ -757,6 +867,30 @@ nav.menu ul li a.active{
     .first_section .f-50{
         padding: 0 10px;
     }
+    .deg_70, .deg_30, .deg_33{
+        width: calc(100% - 20px);
+    }
+    .div_degrade{
+        height: 300px;
+        margin: 10px;
+    }
+    .col_reverse_mobile{
+        flex-direction: column-reverse;
+    }
+    .content_min{
+        padding: 30px 0;
+    }
+    .content_min img{
+        width: 75%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .content_flag2{
+        padding: 40px 10px;
+    }
+    .imgs_card img{
+        width: 25%;
+    }
 }
 
 @media(max-width: 500px){
@@ -848,5 +982,20 @@ nav.menu ul li a.active{
     }
     .content_form_sobre .form_contact .w-50{
         width: 100%;
+    }
+    .card_work h3{
+        font-size: 20px;
+    }
+    .card_work ul li{
+        font-size: 14px;
+    }
+    .imgs_card img{
+        width: 28%;
+    }
+    .w-70{
+        width: 100%!important;
+    }
+    .div_degrade_mini{
+        height: 200px;
     }
 }

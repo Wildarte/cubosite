@@ -104,4 +104,57 @@ $(document).ready(function(){
 
   });
 
+
+
+
+
+
+
+
+
+
+  //typing text ===================================================
+  let words = ["Primeira", "Segunda", "Terceira", "Quarta"];
+  let currentIndex = 0;
+  let textElement = document.getElementById("title");
+  let intervalId;
+
+  function typeWord(word) {
+      let currentText = "";
+      let index = 0;
+      intervalId = setInterval(function() {
+          currentText += word[index];
+          textElement.textContent = currentText;
+          index++;
+          if (index === word.length) {
+              clearInterval(intervalId);
+              setTimeout(function() {
+                  eraseWord(word);
+              }, 1000);
+          }
+      }, 200);
+  }
+
+  function eraseWord(word) {
+      let currentText = word;
+      let index = word.length - 1;
+      intervalId = setInterval(function() {
+          currentText = currentText.slice(0, index);
+          textElement.textContent = currentText;
+          index--;
+          if (index === -1) {
+              clearInterval(intervalId);
+              currentIndex++;
+              if (currentIndex === words.length) {
+                  currentIndex = 0;
+              }
+              setTimeout(function() {
+                  typeWord(words[currentIndex]);
+              }, 500);
+          }
+      }, 100);
+  }
+
+  typeWord(words[currentIndex]);
+
 })
