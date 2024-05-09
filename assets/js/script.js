@@ -159,6 +159,149 @@ $(document).ready(function(){
     typeWord(words[currentIndex]);
   }
 
+
+  //==================== contador =========================
+  function isElementInViewport(el) {
+    let rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  function contadorQuandoDivAparece() {
+    let contador = 0;
+    let contador2 = 0;
+    let contador3 = 0;
+    let is_view_one = document.getElementById('is_view_one');
+    let is_view_two = document.getElementById('is_view_two');
+    let is_view_three = document.getElementById('is_view_three');
+
+    let count_one = document.getElementById('count_one');
+    let count_two = document.getElementById('count_two');
+    let count_three = document.getElementById('count_three');
   
+    function verificarVisibilidade1() {
+      
+      if (isElementInViewport(is_view_one)) {
+        contador++;
+        if (contador <= 44) {
+          console.log("Contagem: " + contador);
+          count_one.innerHTML = contador
+        }else{
+            clearInterval(intervalID1);
+        }
+      }
+
+    }
+
+    function verificarVisibilidade2(){
+        if (isElementInViewport(is_view_two)) {
+            contador2++;
+            if (contador2 <= 44) {
+              console.log("Contagem: " + contador2);
+              count_two.innerHTML = contador2
+            }else{
+                clearInterval(intervalID2);
+            }
+          }
+    }
+
+    function verificarVisibilidade3(){
+        if (isElementInViewport(is_view_three)) {
+            contador3++;
+            if (contador3 <= 27) {
+              console.log("Contagem: " + contador3);
+              count_three.innerHTML = contador3
+            }else{
+                clearInterval(intervalID3);
+            }
+          }
+    }
+  
+    // Verificar a visibilidade quando a página carrega e quando a rolagem acontece
+    //verificarVisibilidade();
+    let is_view = document.getElementById('is_view_one')
+    if(is_view){
+
+        let intervalID1 = setInterval(verificarVisibilidade1, 60);
+        let intervalID2 = setInterval(verificarVisibilidade2, 60);
+        let intervalID3 = setInterval(verificarVisibilidade3, 60);
+    }
+  }
+
+  contadorQuandoDivAparece();
+  //==================== contador =========================
+
+
+
+  function distanciaElementoAoTopo(el) {
+    var rect = el.getBoundingClientRect();
+    return rect.top + window.scrollY;
+  }
+
+  const modelos_lojas = document.getElementById('modelos_lojas');
+  let dist_modelos_lojas = distanciaElementoAoTopo(modelos_lojas);
+  console.log('distancia modelos loja: '+dist_modelos_lojas);
+
+  const modelos_realidade = document.getElementById('modelos_realidade');
+  let distancia_modelos_realidade = distanciaElementoAoTopo(modelos_realidade);
+  console.log('distancia modelos_realidade: '+ distancia_modelos_realidade)
+
+  const modelos_marketing = document.getElementById('modelos_marketing');
+  let distancia_modelos_marketing = distanciaElementoAoTopo(modelos_marketing);
+  console.log('distancia modelos_marketing: '+distancia_modelos_marketing); 
+
+  //==== itens switch ============================================================
+  const list_switch = document.querySelectorAll('.list_switch li a');
+  const list_s = document.getElementById('content_swicth');
+
+  let width_item = [];
+
+  list_switch.forEach((item, index) => {
+
+    width_item[index] = item.getBoundingClientRect().width;
+
+  });
+  //==== itens switch ============================================================
+
+  document.addEventListener('scroll', () => {
+
+    let current_scroll = window.scrollY;
+    console.log(current_scroll);
+
+    if(current_scroll >= distancia_modelos_realidade){
+        list_s.scrollLeft =  width_item[0];
+        list_switch.forEach((item) => {
+
+            item.classList.remove('active')
+
+        });
+
+        list_switch[1].classList.add('active');
+    }else{
+        list_s.scrollLeft =  0;
+        list_switch.forEach((item) => {
+
+            item.classList.remove('active')
+
+        });
+
+        list_switch[0].classList.add('active');
+    }
+    
+    if(current_scroll >= distancia_modelos_marketing){
+        list_s.scrollLeft =  (width_item[0] + width_item[1]);
+        list_switch.forEach((item) => {
+
+            item.classList.remove('active')
+
+        });
+
+        list_switch[2].classList.add('active');
+    }
+
+  });
 
 })

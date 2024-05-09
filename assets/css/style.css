@@ -743,7 +743,7 @@ nav.menu ul li a.active{
     padding: 60px 0;
 }
 .content_flag2{
-    padding: 60px 10px 160px;
+    padding: 60px 10px;
 }
 .content_min img{
     margin: auto;
@@ -782,6 +782,7 @@ nav.menu ul li a.active{
 .list_switch{
     margin: auto;
     display: flex;
+    transition: all .23s;
 }
 .list_switch li a{
     padding: 2px 20px;
@@ -794,7 +795,7 @@ nav.menu ul li a.active{
     padding: 60px 10px 40px;
 }
 .section_form_portfolio{
-    margin-top: 80px;
+    margin-top: 200px;
 }
 .form_page_portfolio .btn-default{
     margin-top: 20px;
@@ -1004,6 +1005,8 @@ nav.menu ul li a.active{
         overflow: auto;
         display: flex;
         justify-content: flex-start;
+        transition: all .23s;
+        scroll-behavior: smooth;
     }
     .list_switch{
         min-width: 768px;
@@ -1123,6 +1126,15 @@ nav.menu ul li a.active{
     }
     .title_modelos_page, .title_page_sobre{
         padding-bottom: 20px;
+    }
+    .card_van{
+        padding: 20px 20px 60px;
+    }
+    .card_van p.bottom_card_van{
+        bottom: 30px;
+    }
+    .section_form_portfolio{
+        margin-top: 120px;
     }
 }
 @media(max-width: 420px){
